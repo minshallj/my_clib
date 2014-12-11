@@ -21,7 +21,7 @@ void stack_init(Stack *stack, int membsize)
 	grow(stack);
 }
 
-void push(Stack *stack, void *new_data)
+void stack_push(Stack *stack, void *new_data)
 {
 	if (stack->nmemb >= stack->allocated)
 		grow(stack);
@@ -35,7 +35,7 @@ void push(Stack *stack, void *new_data)
  * oh gosh, they'll also have to check for error values... Like if
  * there isn't enough memory to malloc, or they have zero values to pop.
  */
-void *pop(Stack *stack)
+void *stack_pop(Stack *stack)
 {
 	void *ret = malloc(stack->membsize);
 
