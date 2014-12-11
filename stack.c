@@ -6,7 +6,7 @@
 #include <string.h>
 
 /* "private" stack functions */
-void grow(Stack *stack)
+static void grow(Stack *stack)
 {
 	stack->allocated *= 2;
 	stack->data = realloc(stack->data, stack->allocated * stack->membsize);
