@@ -26,7 +26,7 @@ void stack_push(Stack *stack, void *new_data)
 	if (stack->nmemb >= stack->allocated)
 		grow(stack);
 
-	memmove(new_data, (stack + stack->nmemb), stack->membsize);
+	memmove((stack + stack->nmemb), new_data, stack->membsize);
 	stack->nmemb += 1;
 }
 
