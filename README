@@ -1,0 +1,7 @@
+# a generic c library which contains:
+
+* a stack implementation
+
+* a hash table
+
+* probably some more stuff...
