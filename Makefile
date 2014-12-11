@@ -12,3 +12,5 @@ stack.o: stack.c stack.h
 test: harness.o stack.o
 	$(CC) harness.o stack.o -o test.out
 
+clean:
+	rm harness.o stack.o test.out
