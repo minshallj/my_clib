@@ -47,7 +47,7 @@ int test_list(int prepend)
 		}
 	}
 	for (i = 0; i < 5; i++)
-		linked_list_remove_index(&l, 1);
+		linked_list_remove_index(&l, i + 1);
 	printf("\njust removed the first five\n");
 
 	for (i = 0; i < 10; i++) {
