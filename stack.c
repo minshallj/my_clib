@@ -54,3 +54,8 @@ void *stack_pop(Stack *stack)
 
 	return ret;
 }
+
+void stack_free(Stack *stack)
+{
+	free(stack->data);
+}

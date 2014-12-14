@@ -13,4 +13,5 @@ typedef struct {
 void stack_init(Stack *stack, int membsize);
 void stack_push(Stack *stack, void *data);
 void *stack_pop(Stack *stack);
+void stack_free(Stack *stack);
 #endif

@@ -18,6 +18,7 @@ int test_stack()
 		printf("%d,", *(tmp = (int *)stack_pop(&s)));
 		free(tmp);
 	}
+	stack_free(&s);
 	printf("\n\ttest stack finished\n");
 
 	return 0;
