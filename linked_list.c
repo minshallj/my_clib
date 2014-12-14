@@ -42,7 +42,7 @@ void linked_list_remove_index(LinkedList *l, int index)
 	int i;
 
 	/* TODO: after adding size, have check for index > size */
-	if (index == 0) {
+	if (index == 1) {
 		cur = l->head;
 		/* no need to remove if it's null */
 		if (cur == NULL)

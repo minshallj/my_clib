@@ -46,10 +46,9 @@ int test_list(int prepend)
 			printf("\tGot null on %d\n", i);
 		}
 	}
-	/*
 	for (i = 0; i < 5; i++)
 		linked_list_remove_index(&l, 1);
-	printf("\njust removed everything\n");
+	printf("\njust removed the first five\n");
 
 	for (i = 0; i < 10; i++) {
 		tmp = linked_list_index(&l, i+1);
@@ -60,7 +59,6 @@ int test_list(int prepend)
 			printf("\tGot null on %d\n", i);
 		}
 	}
-	*/
 	printf("\n\ttest list finished\n");
 
 	return 0;
