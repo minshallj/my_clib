@@ -59,6 +59,7 @@ int test_list(int prepend)
 			printf("\tGot null on %d\n", i);
 		}
 	}
+	linked_list_free(&l);
 	printf("\n\ttest list finished\n");
 
 	return 0;

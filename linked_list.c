@@ -108,3 +108,15 @@ void linked_list_prepend(LinkedList *l, void *data, int data_size)
 	ln->next = l->head;
 	l->head = ln;
 }
+
+void linked_list_free(LinkedList *l)
+{
+	LinkedNode *n = l->head, *tmp;
+
+	while (n != NULL) {
+		free(n->data);
+		tmp = n;
+		n = n->next;
+		free(tmp);
+	}
+}
