@@ -24,5 +24,6 @@ void linked_list_remove_index(LinkedList *l, int index);
 void linked_list_append(LinkedList *l, void *data, int data_size);
 void linked_list_prepend(LinkedList *l, void *data, int data_size);
 void linked_list_free(LinkedList *l);
-/* TODO: add a list_insert_sorted method */
+void linked_list_insert_sorted(LinkedList *l, void *data, int data_size,
+		int (*compar)(const void *, const void *));
 #endif

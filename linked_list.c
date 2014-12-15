@@ -120,3 +120,33 @@ void linked_list_free(LinkedList *l)
 		free(tmp);
 	}
 }
+
+void linked_list_insert_sorted(LinkedList *l, void *data, int data_size,
+		int (*compar)(const void *, const void *))
+{
+	LinkedNode *cur = l->head, *prev = NULL, *new_ln;
+
+	while (cur != NULL) {
+		/* this means we want to insert */
+		if (compar(data, cur->data) <= 0) {
+			/* belongs in the first spot */
+			if (prev == NULL) {
+				linked_list_prepend(l, data, data_size);
+				return;
+			}
+			new_ln = (LinkedNode *)malloc(sizeof(LinkedNode));
+			new_ln->data_size = data_size;
+			new_ln->data = malloc(data_size);
+			memmove(new_ln->data, data, data_size);
+
+			prev->next = new_ln;
+			new_ln->next = cur;
+			return;
+		}
+		prev = cur;
+		cur = cur->next;
+	}
+
+	/* if we made it here, this new data belongs at the end of the list */
+	linked_list_append(l, data, data_size);
+}
